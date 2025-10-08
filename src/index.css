@@ -1,0 +1,120 @@
+/* ====== Global Styling ====== */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #f7f9fb, #e2e8f0);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.lamp-container {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.lamp-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+}
+
+/* ====== Lamp Grid ====== */
+.lamp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* ====== Lamp Card ====== */
+.lamp-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.3s;
+  width: 220px;
+}
+
+.lamp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.lamp-card h3 {
+  margin: 12px 0;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ====== Lamp Bulb ====== */
+.lamp-bulb {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  transition: 0.4s;
+  background: radial-gradient(circle, #777 10%, #333 90%);
+  box-shadow: inset 0 0 10px #222;
+}
+
+.lamp-bulb.on {
+  background: radial-gradient(circle, #fff973 0%, #f7d00a 70%);
+  box-shadow: 0 0 25px 10px rgba(255, 235, 59, 0.8);
+  transform: scale(1.05);
+}
+
+.lamp-bulb.off {
+  background: radial-gradient(circle, #555 0%, #222 80%);
+  box-shadow: inset 0 0 10px #111;
+}
+
+/* ====== Switch Toggle ====== */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #00b050;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.lamp-status {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+}
